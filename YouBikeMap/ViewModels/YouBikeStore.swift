@@ -26,7 +26,6 @@ fileprivate let _reducer: YouBikeStore.Reducer = {
     return (state, newAction)
 }
 
-@MainActor
 public final
 class YouBikeStore: Store
 {

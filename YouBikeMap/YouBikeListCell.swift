@@ -24,10 +24,8 @@ struct YouBikeListCell: View
                     
                     Text(self.mapItem.name ?? "")
                         .bold()
-    //                    .foregroundColor(.white)
                     
                     Text(self.mapItem.subtitle ?? "")
-    //                    .foregroundColor(.white)
                 }
                 
                 Spacer()
@@ -43,7 +41,6 @@ struct YouBikeListCell: View
             }
             
             Line(style: .single)
-                .padding(.bottom)
         }
     }
 }
@@ -52,6 +49,5 @@ struct YouBikeListCell_Previews: PreviewProvider
 {
     static var previews: some View {
         YouBikeListCell(mapItem: .dummyItem)
-//            .background(Color(.systemBlue))
     }
 }

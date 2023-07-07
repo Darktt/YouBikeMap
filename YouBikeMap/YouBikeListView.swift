@@ -29,7 +29,6 @@ struct YouBikeListView: View
                         item in
                         
                         YouBikeListCell(mapItem: item)
-                            .padding(.horizontal, 0.0)
                             .padding([.leading, .trailing], 5.0)
                     }
                 }

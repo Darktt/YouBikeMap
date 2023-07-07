@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@MainActor
 public
 protocol Store: ObservableObject
 {
@@ -16,6 +17,7 @@ protocol Store: ObservableObject
     associatedtype Action
     
     typealias ReducerResult = (state: State, action: Action?)
+    
     typealias Reducer = (State, Action) -> ReducerResult
     
     var state: State { get }
