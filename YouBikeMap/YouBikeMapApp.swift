@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct YouBikeMapApp: App {
+struct YouBikeMapApp: App
+{
     var body: some Scene {
+        
         WindowGroup {
+            
             ContentView()
+                .environmentObject(YouBikeStore.default)
         }
     }
 }

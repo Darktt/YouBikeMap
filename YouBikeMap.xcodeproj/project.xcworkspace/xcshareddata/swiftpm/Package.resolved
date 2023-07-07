@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "jsonprotection",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Darktt/JsonProtection",
+      "state" : {
+        "revision" : "3d93d778287476536a84dca689681bfe283d4a7b",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
