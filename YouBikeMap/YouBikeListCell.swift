@@ -23,9 +23,11 @@ struct YouBikeListCell: View
                 VStack(alignment: .leading) {
                     
                     Text(self.mapItem.name ?? "")
+                        .foregroundColor(.black)
                         .bold()
                     
                     Text(self.mapItem.subtitle ?? "")
+                        .foregroundColor(.black)
                 }
                 
                 Spacer()

@@ -131,9 +131,26 @@ extension YouBikeMapItem: Decodable
 extension YouBikeMapItem: Identifiable
 {
     public
-    var id: Int {
+    var id: String {
         
-        self.number ?? 0
+        "\(self.number ?? 0)" + (self.name ?? "")
+    }
+}
+
+extension YouBikeMapItem: Equatable
+{
+    public static func == (lhs: YouBikeMapItem, rhs: YouBikeMapItem) -> Bool
+    {
+        lhs.id == rhs.id
+    }
+}
+
+extension YouBikeMapItem: Hashable
+{
+    public func hash(into hasher: inout Hasher)
+    {
+        self.number?.hash(into: &hasher)
+        self.name?.hash(into: &hasher)
     }
 }
 

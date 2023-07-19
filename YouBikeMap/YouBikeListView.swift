@@ -27,9 +27,14 @@ struct YouBikeListView: View
                     ForEach(self.mapItems) {
                         
                         item in
-                        
-                        YouBikeListCell(mapItem: item)
-                            .padding([.leading, .trailing], 5.0)
+                        NavigationLink {
+                            
+                            MapView(item: item)
+                        } label: {
+                            
+                            YouBikeListCell(mapItem: item)
+                                .padding([.leading, .trailing], 5.0)
+                        }
                     }
                 }
             }

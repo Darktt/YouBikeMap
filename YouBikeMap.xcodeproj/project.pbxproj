@@ -16,6 +16,8 @@
 		F202361D2A53BBED007952F2 /* JsonDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202361C2A53BBED007952F2 /* JsonDecodable.swift */; };
 		F20236222A53C96C007952F2 /* SwiftExtensions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; };
 		F20236232A53C96C007952F2 /* SwiftExtensions.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245060E2A67B35800B5E4D4 /* MapView.swift */; };
+		F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */; };
 		F2EFC5692A53E490002136D9 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5682A53E490002136D9 /* Middleware.swift */; };
 		F2EFC56D2A53E543002136D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56C2A53E543002136D9 /* Store.swift */; };
 		F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */; };
@@ -54,6 +56,8 @@
 		F20236192A53B7BB007952F2 /* APIName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIName.swift; sourceTree = "<group>"; };
 		F202361C2A53BBED007952F2 /* JsonDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodable.swift; sourceTree = "<group>"; };
 		F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftExtensions.xcframework; path = Framework/SwiftExtensions.xcframework; sourceTree = "<group>"; };
+		F245060E2A67B35800B5E4D4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItemExtension.swift; sourceTree = "<group>"; };
 		F2EFC5682A53E490002136D9 /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		F2EFC56C2A53E543002136D9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStore.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				F20236092A53B5F0007952F2 /* ContentView.swift */,
 				F2EFC5842A555784002136D9 /* YouBikeListView.swift */,
 				F2EFC5862A5558C4002136D9 /* YouBikeListCell.swift */,
+				F245060E2A67B35800B5E4D4 /* MapView.swift */,
 				F202360B2A53B5F1007952F2 /* Assets.xcassets */,
 				F202360D2A53B5F1007952F2 /* YouBikeMap.entitlements */,
 				F202360E2A53B5F1007952F2 /* Preview Content */,
@@ -130,6 +135,7 @@
 				F20236192A53B7BB007952F2 /* APIName.swift */,
 				F2EFC57A2A540DBC002136D9 /* APIResponse.swift */,
 				F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */,
+				F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,10 +261,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EFC5872A5558C4002136D9 /* YouBikeListCell.swift in Sources */,
+				F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */,
 				F2EFC57D2A54F96D002136D9 /* Action.swift in Sources */,
 				F2EFC56D2A53E543002136D9 /* Store.swift in Sources */,
 				F2EFC5852A555784002136D9 /* YouBikeListView.swift in Sources */,
 				F20236182A53B62D007952F2 /* APIHandler.swift in Sources */,
+				F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */,
 				F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */,
 				F202360A2A53B5F0007952F2 /* ContentView.swift in Sources */,
 				F2EFC57B2A540DBC002136D9 /* APIResponse.swift in Sources */,
