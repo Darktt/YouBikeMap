@@ -7,91 +7,56 @@
 
 import Foundation
 
+public
+typealias YouBikeStore = Store<YouBikeState, YouBikeAction, YouBikeContext>
+
+@MainActor
+let kYouBikeStore = YouBikeStore(state: YouBikeState(), context: YouBikeContext(), reducer: _reducer)
+
+// MARK: - YouBikeState -
+
+public
+struct YouBikeState
+{
+    public fileprivate(set)
+    var mapItems: Array<YouBikeMapItem> = []
+    
+    fileprivate
+    init() { }
+}
+
+// MARK: - YouBikeContext -
+
+public
+struct YouBikeContext
+{
+    func fetchData() async throws -> Array<YouBikeMapItem>
+    {
+        let apiHandler = APIHandler.shared
+        let response: APIResponse = try await apiHandler.sendRequest(via: .bikeMap)
+        let mapItems: Array<YouBikeMapItem> = response.data?.returnValue ?? []
+        
+        return mapItems
+    }
+}
+
+// MARK: - Reducer -
+
 fileprivate let _reducer: YouBikeStore.Reducer = {
     
-    (state, action) in
+    (state, action, context) in
     
-    var state: YouBikeStore.State = state
-    var newAction: YouBikeStore.Action? = nil
+    var state: YouBikeState = state
     
     switch action
     {
-        case let .fetchDataResponse(mapItems):
+        case .fetchData:
+            let mapItems = try await context.fetchData()
             state.mapItems = mapItems
         
         default:
             break
     }
     
-    return (state, newAction)
-}
-
-public final
-class YouBikeStore: Store
-{
-    // MARK: - Properties -
-    
-    public static
-    var `default`: YouBikeStore {
-        
-        YouBikeStore()
-    }
-    
-    @Published
-    public
-    var state: State = .init()
-    
-    public
-    let reducer: Reducer
-    
-    public
-    let middleware: AnyMiddleware<Action>
-    
-    private
-    init()
-    {
-        self.middleware = YouBikeMiddleware().eraseToAnyMiddleware()
-        self.reducer = _reducer
-    }
-    
-    func sendAction(_ action: Action)
-    {
-        Task {
-            
-            let responseAction: Action = try await self.middleware(action: action)
-            let result: ReducerResult = self.reducer(self.state, responseAction)
-            
-            self.state = result.state
-            try await self.sendNextAction(result.action)
-        }
-    }
-}
-
-private
-extension YouBikeStore
-{
-    func sendNextAction(_ action: Action?) async throws
-    {
-        guard let action = action else {
-            
-            return
-        }
-        
-        self.sendAction(action)
-    }
-}
-
-// MARK: - YouBikeStore.State -
-
-public
-extension YouBikeStore
-{
-    struct State
-    {
-        public fileprivate(set)
-        var mapItems: Array<YouBikeMapItem> = []
-        
-        fileprivate
-        init() { }
-    }
+    return state
 }

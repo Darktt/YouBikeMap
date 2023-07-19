@@ -17,7 +17,7 @@ struct ContentView: View
     public
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
             YouBikeListView(mapItems: self.store.state.mapItems)
             .navigationBarTitle(Text("YouBike"), displayMode: .automatic)
@@ -27,7 +27,13 @@ struct ContentView: View
     
     func fetch()
     {
-        self.store.sendAction(.fetchData)
+        do {
+            
+            try self.store.send(.fetchData)
+        } catch {
+            
+            print(error)
+        }
     }
 }
 
@@ -36,6 +42,6 @@ struct ContentView_Previews: PreviewProvider
     static var previews: some View
     {
         ContentView()
-            .environmentObject(YouBikeStore.default)
+            .environmentObject(kYouBikeStore)
     }
 }

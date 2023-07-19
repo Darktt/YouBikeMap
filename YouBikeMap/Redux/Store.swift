@@ -9,20 +9,38 @@ import Foundation
 import Combine
 
 @MainActor
-public
-protocol Store: ObservableObject
+public final
+class Store<State, Action, Context>: ObservableObject
 {
-    associatedtype State
+    public
+    typealias Reducer = (State, Action, Context) async throws -> State
     
-    associatedtype Action
+    @Published
+    public private(set)
+    var state: State
     
-    typealias ReducerResult = (state: State, action: Action?)
+    public private(set)
+    var context: Context
     
-    typealias Reducer = (State, Action) -> ReducerResult
+    private(set)
+    var reducer: Reducer
     
-    var state: State { get }
+    public
+    init(state: State, context: Context, reducer: @escaping Reducer)
+    {
+        self.state = state
+        self.context = context
+        self.reducer = reducer
+    }
     
-    var reducer: Reducer { get }
-    
-    var middleware: AnyMiddleware<Action> { get }
+    public
+    func send(_ action: Action) throws
+    {
+        Task {
+            
+            let state = try await self.reducer(self.state, action, self.context)
+            
+            self.state = state
+        }
+    }
 }

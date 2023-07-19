@@ -15,7 +15,7 @@ struct YouBikeMapApp: App
         WindowGroup {
             
             ContentView()
-                .environmentObject(YouBikeStore.default)
+                .environmentObject(kYouBikeStore)
         }
     }
 }

@@ -8,12 +8,9 @@
 import Foundation
 
 public
-extension YouBikeStore
+enum YouBikeAction
 {
-    enum Action
-    {
-        case fetchData
-        
-        case fetchDataResponse(Array<YouBikeMapItem>)
-    }
+    case fetchData
+    
+    case fetchDataResponse(Array<YouBikeMapItem>)
 }

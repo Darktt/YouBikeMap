@@ -20,7 +20,6 @@
 		F2EFC56D2A53E543002136D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56C2A53E543002136D9 /* Store.swift */; };
 		F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */; };
 		F2EFC5722A53E9AC002136D9 /* YouBikeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */; };
-		F2EFC5742A53F152002136D9 /* YouBikeMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5732A53F152002136D9 /* YouBikeMiddleware.swift */; };
 		F2EFC5762A53FA00002136D9 /* YouBikeMapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */; };
 		F2EFC5792A53FA77002136D9 /* JsonProtection in Frameworks */ = {isa = PBXBuildFile; productRef = F2EFC5782A53FA77002136D9 /* JsonProtection */; };
 		F2EFC57B2A540DBC002136D9 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC57A2A540DBC002136D9 /* APIResponse.swift */; };
@@ -59,7 +58,6 @@
 		F2EFC56C2A53E543002136D9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStore.swift; sourceTree = "<group>"; };
 		F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeAction.swift; sourceTree = "<group>"; };
-		F2EFC5732A53F152002136D9 /* YouBikeMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMiddleware.swift; sourceTree = "<group>"; };
 		F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItem.swift; sourceTree = "<group>"; };
 		F2EFC57A2A540DBC002136D9 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		F2EFC57C2A54F96D002136D9 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			children = (
 				F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */,
 				F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */,
-				F2EFC5732A53F152002136D9 /* YouBikeMiddleware.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -258,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EFC5872A5558C4002136D9 /* YouBikeListCell.swift in Sources */,
-				F2EFC5742A53F152002136D9 /* YouBikeMiddleware.swift in Sources */,
 				F2EFC57D2A54F96D002136D9 /* Action.swift in Sources */,
 				F2EFC56D2A53E543002136D9 /* Store.swift in Sources */,
 				F2EFC5852A555784002136D9 /* YouBikeListView.swift in Sources */,
