@@ -22,6 +22,9 @@ struct YouBikeState
     var mapItems: Array<YouBikeMapItem> = []
     
     fileprivate
+    var privateMapItems: Array<YouBikeMapItem> = []
+    
+    fileprivate
     init() { }
 }
 
@@ -53,6 +56,16 @@ fileprivate let _reducer: YouBikeStore.Reducer = {
         case .fetchData:
             let mapItems = try await context.fetchData()
             state.mapItems = mapItems
+            state.privateMapItems = mapItems
+        
+        case let .search(keyword):
+            guard !keyword.isEmpty else {
+                
+                state.mapItems = state.privateMapItems
+                break
+            }
+            let searchResultItems = state.privateMapItems.filter({ $0.name?.contains(keyword) == true })
+            state.mapItems = searchResultItems
         
         default:
             break

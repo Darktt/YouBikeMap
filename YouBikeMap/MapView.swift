@@ -19,7 +19,9 @@ public struct MapView: View
             item in
             
             MapMarker(coordinate: item.coordinate, tint: .red)
-        }.ignoresSafeArea()
+        }
+        .navigationBarTitle("Map", displayMode: .inline)
+        .ignoresSafeArea()
     }
 }
 

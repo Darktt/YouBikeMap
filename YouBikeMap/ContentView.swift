@@ -14,6 +14,10 @@ struct ContentView: View
     private
     var store: YouBikeStore
     
+    @State
+    private
+    var searchKeyword: String = ""
+    
     public
     var body: some View {
         
@@ -23,6 +27,11 @@ struct ContentView: View
             .navigationBarTitle(Text("YouBike"), displayMode: .automatic)
         }
         .onAppear(perform: self.fetch)
+        .searchable(text: self.$searchKeyword)
+        .onChange(of: self.searchKeyword) { newValue in
+            
+            self.search(with: newValue)
+        }
     }
     
     func fetch()
@@ -30,6 +39,17 @@ struct ContentView: View
         do {
             
             try self.store.send(.fetchData)
+        } catch {
+            
+            print(error)
+        }
+    }
+    
+    func search(with keyword: String)
+    {
+        do {
+            
+            try self.store.send(.search(keyword))
         } catch {
             
             print(error)

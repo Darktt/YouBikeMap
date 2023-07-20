@@ -13,4 +13,6 @@ enum YouBikeAction
     case fetchData
     
     case fetchDataResponse(Array<YouBikeMapItem>)
+    
+    case search(String)
 }
