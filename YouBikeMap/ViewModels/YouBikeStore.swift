@@ -64,7 +64,7 @@ fileprivate let _reducer: YouBikeStore.Reducer = {
                 state.mapItems = state.privateMapItems
                 break
             }
-            let searchResultItems = state.privateMapItems.filter({ $0.name?.contains(keyword) == true })
+            let searchResultItems = state.privateMapItems.filter({ $0.name.contains(keyword) })
             state.mapItems = searchResultItems
         
         default:

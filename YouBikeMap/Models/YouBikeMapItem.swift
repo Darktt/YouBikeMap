@@ -19,8 +19,18 @@ struct YouBikeMapItem
     var city: String?
     
     /// 站點名稱
+    @TrimString(trimSetting: .prefix("YouBike2.0_"))
     public private(set)
-    var name: String?
+    var name: String
+    
+    private
+    var privateName: String? {
+        
+        willSet {
+            
+            self.name = newValue ?? ""
+        }
+    }
     
     /// 站點所在區域
     public private(set)
@@ -82,7 +92,7 @@ extension YouBikeMapItem
         
         var mapItem = YouBikeMapItem()
         mapItem.city = "高雄市"
-        mapItem.name = "YouBike2.0_後勁鳳屏宮"
+        mapItem.privateName = "YouBike2.0_後勁鳳屏宮"
         mapItem.area = "楠梓區"
         mapItem.subtitle = "後勁東路/後勁東路30巷(西南側)"
         mapItem.number = Int.random(in: 100 ... 10000)
@@ -104,7 +114,7 @@ extension YouBikeMapItem: Decodable
     {
         case city = "scity"
         
-        case name = "sna"
+        case privateName = "sna"
         
         case area = "sarea"
         
@@ -133,7 +143,7 @@ extension YouBikeMapItem: Identifiable
     public
     var id: String {
         
-        "\(self.number ?? 0)" + (self.name ?? "")
+        "\(self.number ?? 0)" + (self.privateName ?? "")
     }
 }
 
@@ -150,7 +160,7 @@ extension YouBikeMapItem: Hashable
     public func hash(into hasher: inout Hasher)
     {
         self.number?.hash(into: &hasher)
-        self.name?.hash(into: &hasher)
+        self.name.hash(into: &hasher)
     }
 }
 

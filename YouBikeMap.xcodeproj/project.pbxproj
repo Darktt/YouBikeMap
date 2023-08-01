@@ -18,6 +18,7 @@
 		F20236232A53C96C007952F2 /* SwiftExtensions.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245060E2A67B35800B5E4D4 /* MapView.swift */; };
 		F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */; };
+		F2EBAE082A68DFCF0035CCFE /* TrimString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBAE072A68DFCF0035CCFE /* TrimString.swift */; };
 		F2EFC5692A53E490002136D9 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5682A53E490002136D9 /* Middleware.swift */; };
 		F2EFC56D2A53E543002136D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56C2A53E543002136D9 /* Store.swift */; };
 		F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */; };
@@ -58,6 +59,7 @@
 		F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftExtensions.xcframework; path = Framework/SwiftExtensions.xcframework; sourceTree = "<group>"; };
 		F245060E2A67B35800B5E4D4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItemExtension.swift; sourceTree = "<group>"; };
+		F2EBAE072A68DFCF0035CCFE /* TrimString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimString.swift; sourceTree = "<group>"; };
 		F2EFC5682A53E490002136D9 /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		F2EFC56C2A53E543002136D9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStore.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		F20236062A53B5F0007952F2 /* YouBikeMap */ = {
 			isa = PBXGroup;
 			children = (
+				F2EBAE042A68CF060035CCFE /* Property Wrapper */,
 				F2EFC58A2A5567E2002136D9 /* Views */,
 				F2EFC56E2A53E7C9002136D9 /* Redux */,
 				F20236252A53CBD8007952F2 /* ViewModels */,
@@ -163,6 +166,14 @@
 				F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F2EBAE042A68CF060035CCFE /* Property Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				F2EBAE072A68DFCF0035CCFE /* TrimString.swift */,
+			);
+			path = "Property Wrapper";
 			sourceTree = "<group>";
 		};
 		F2EFC56E2A53E7C9002136D9 /* Redux */ = {
@@ -276,6 +287,7 @@
 				F2EFC5722A53E9AC002136D9 /* YouBikeAction.swift in Sources */,
 				F2EFC5892A5567DC002136D9 /* Line.swift in Sources */,
 				F202361D2A53BBED007952F2 /* JsonDecodable.swift in Sources */,
+				F2EBAE082A68DFCF0035CCFE /* TrimString.swift in Sources */,
 				F202361A2A53B7BB007952F2 /* APIName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
