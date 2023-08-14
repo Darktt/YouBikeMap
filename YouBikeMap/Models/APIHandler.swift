@@ -48,10 +48,36 @@ class APIHandler
             throw HTTPError(statusCode)
         }
         
-//        self.logJsonString(response.0)
         let responseObject = try ResponseObject.decode(with: response.0)
         
         return responseObject
+    }
+    
+    public
+    func sendRequest<ResponseObject>(via apiName: APIName, completion: @escaping (Result<ResponseObject, any Error>) -> Void) where ResponseObject: JsonDecodable
+    {
+        let handler: URLSession.DataTaskResultHandler = {
+            
+            [unowned self] result in
+            
+            self.urlSession.finishTasksAndInvalidate()
+            
+            let newResult: Result<ResponseObject, Error> = result.flatMap {
+                
+                data in
+                
+                Result {
+                    
+                    try ResponseObject.decode(with: data)
+                }
+            }
+            
+            completion(newResult)
+        }
+        
+        let dataTask: URLSessionDataTask = self.urlSession.dataTask(with: apiName.url, completionHandler: handler)
+        
+        dataTask.resume()
     }
 }
 
