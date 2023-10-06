@@ -22,7 +22,7 @@ struct YouBikeListCell: View
                 
                 VStack(alignment: .leading) {
                     
-                    Text(self.mapItem.name ?? "")
+                    Text(self.mapItem.name)
                         .foregroundColor(.black)
                         .bold()
                     

@@ -118,8 +118,8 @@ extension YouBikeMapItem
         mapItem.subtitle = "後勁東路/後勁東路30巷(西南側)"
         mapItem.number = Int.random(in: 100 ... 10000)
         mapItem.numberOfTotalBikes = 13
-        mapItem.numberOfRentableBikes = 8
-        mapItem.numberOfParkingSpace = 5
+        mapItem.numberOfRentableBikes = 9
+        mapItem.numberOfParkingSpace = 99
         mapItem.isActivate = true
         mapItem.detail = Detail(numberOfYouBikes: 8, numberOfPowerYouBike: 0)
         mapItem.latitude = 22.71517

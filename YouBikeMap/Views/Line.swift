@@ -12,13 +12,17 @@ public struct Line: View
 {
     // MARK: - Properties -
     
-    private let style: LineStyle
+    private
+    let style: LineStyle
     
-    private var lineWidth: CGFloat = 1.0
+    private
+    var lineWidth: CGFloat = 1.0
     
-    private var color: Color = Color.primary
+    private
+    var color: Color = Color.primary
     
-    private var strokeStyle: StrokeStyle {
+    private
+    var strokeStyle: StrokeStyle {
         
         var style = StrokeStyle(lineWidth: self.lineWidth, lineCap: .butt, lineJoin: .round)
         
@@ -45,7 +49,8 @@ public struct Line: View
         return style
     }
     
-    public var body: some View {
+    public
+    var body: some View {
         
         GeometryReader {
             
@@ -75,12 +80,14 @@ public struct Line: View
     // MARK: - Methods -
     // MARK: Initial Method
     
-    public init(style: LineStyle)
+    public
+    init(style: LineStyle)
     {
         self.style = style
     }
     
-    public func lineWidth(_ lineWidth: CGFloat = 1.0, color: Color = .primary) -> Line
+    public
+    func lineWidth(_ lineWidth: CGFloat = 1.0, color: Color = .primary) -> Line
     {
         var line: Line = self
         line.lineWidth = lineWidth
@@ -111,7 +118,8 @@ public enum LineStyle
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension LineStyle: Equatable
 {
-    static public func == (lhs: LineStyle, rhs: LineStyle) -> Bool
+    static public
+    func == (lhs: LineStyle, rhs: LineStyle) -> Bool
     {
         var result: Bool = false
         
