@@ -36,7 +36,7 @@ struct YouBikeContext
     func fetchData() async throws -> Array<YouBikeMapItem>
     {
         let apiHandler = APIHandler.shared
-        let response: APIResponse = try await apiHandler.sendRequest(via: .bikeMap)
+        let response: YouBikeMapResponse = try await apiHandler.sendRequest(YouBikeMapRequest())
         let mapItems: Array<YouBikeMapItem> = response.data?.returnValue ?? []
         
         return mapItems

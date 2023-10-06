@@ -38,9 +38,9 @@ class APIHandler
     }
     
     public
-    func sendRequest<ResponseObject>(via apiName: APIName) async throws -> ResponseObject where ResponseObject: JsonDecodable
+    func sendRequest<Request>(_ request: Request) async throws -> Request.Response where Request: APIRequest
     {
-        let response: (Data, URLResponse) = try await self.urlSession.data(from: apiName.url)
+        let response: (Data, URLResponse) = try await self.urlSession.data(for: request.urlRequest)
         
         if let response = response.1 as? HTTPURLResponse,
             let statusCode = HTTPError.StatusCode(rawValue: response.statusCode) {
@@ -48,13 +48,13 @@ class APIHandler
             throw HTTPError(statusCode)
         }
         
-        let responseObject = try ResponseObject.decode(with: response.0)
+        let responseObject = try Request.Response.decode(with: response.0)
         
         return responseObject
     }
     
     public
-    func sendRequest<ResponseObject>(via apiName: APIName, completion: @escaping (Result<ResponseObject, any Error>) -> Void) where ResponseObject: JsonDecodable
+    func sendRequest<Request>(_ request: Request, completion: @escaping (Request.Result) -> Void) where Request: APIRequest
     {
         let handler: URLSession.DataTaskResultHandler = {
             
@@ -62,20 +62,20 @@ class APIHandler
             
             self.urlSession.finishTasksAndInvalidate()
             
-            let newResult: Result<ResponseObject, Error> = result.flatMap {
+            let newResult: Request.Result = result.flatMap {
                 
                 data in
                 
                 Result {
                     
-                    try ResponseObject.decode(with: data)
+                    try Request.Response.decode(with: data)
                 }
             }
             
             completion(newResult)
         }
         
-        let dataTask: URLSessionDataTask = self.urlSession.dataTask(with: apiName.url, completionHandler: handler)
+        let dataTask: URLSessionDataTask = self.urlSession.dataTask(with: request.urlRequest, completionHandler: handler)
         
         dataTask.resume()
     }

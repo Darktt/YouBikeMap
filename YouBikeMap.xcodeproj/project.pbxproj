@@ -18,6 +18,9 @@
 		F20236232A53C96C007952F2 /* SwiftExtensions.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245060E2A67B35800B5E4D4 /* MapView.swift */; };
 		F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */; };
+		F28E6D372ACFF3E300A57E6E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E6D362ACFF3E300A57E6E /* APIRequest.swift */; };
+		F28E6D392AD0020100A57E6E /* YouBikeMapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E6D382AD0020100A57E6E /* YouBikeMapRequest.swift */; };
+		F28E6D3B2AD0043900A57E6E /* YouBikeMapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E6D3A2AD0043900A57E6E /* YouBikeMapResponse.swift */; };
 		F2EBAE082A68DFCF0035CCFE /* TrimString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBAE072A68DFCF0035CCFE /* TrimString.swift */; };
 		F2EFC5692A53E490002136D9 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5682A53E490002136D9 /* Middleware.swift */; };
 		F2EFC56D2A53E543002136D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56C2A53E543002136D9 /* Store.swift */; };
@@ -25,7 +28,6 @@
 		F2EFC5722A53E9AC002136D9 /* YouBikeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */; };
 		F2EFC5762A53FA00002136D9 /* YouBikeMapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */; };
 		F2EFC5792A53FA77002136D9 /* JsonProtection in Frameworks */ = {isa = PBXBuildFile; productRef = F2EFC5782A53FA77002136D9 /* JsonProtection */; };
-		F2EFC57B2A540DBC002136D9 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC57A2A540DBC002136D9 /* APIResponse.swift */; };
 		F2EFC57D2A54F96D002136D9 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC57C2A54F96D002136D9 /* Action.swift */; };
 		F2EFC5852A555784002136D9 /* YouBikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5842A555784002136D9 /* YouBikeListView.swift */; };
 		F2EFC5872A5558C4002136D9 /* YouBikeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5862A5558C4002136D9 /* YouBikeListCell.swift */; };
@@ -59,13 +61,15 @@
 		F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftExtensions.xcframework; path = Framework/SwiftExtensions.xcframework; sourceTree = "<group>"; };
 		F245060E2A67B35800B5E4D4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItemExtension.swift; sourceTree = "<group>"; };
+		F28E6D362ACFF3E300A57E6E /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		F28E6D382AD0020100A57E6E /* YouBikeMapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapRequest.swift; sourceTree = "<group>"; };
+		F28E6D3A2AD0043900A57E6E /* YouBikeMapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapResponse.swift; sourceTree = "<group>"; };
 		F2EBAE072A68DFCF0035CCFE /* TrimString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimString.swift; sourceTree = "<group>"; };
 		F2EFC5682A53E490002136D9 /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		F2EFC56C2A53E543002136D9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStore.swift; sourceTree = "<group>"; };
 		F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeAction.swift; sourceTree = "<group>"; };
 		F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItem.swift; sourceTree = "<group>"; };
-		F2EFC57A2A540DBC002136D9 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		F2EFC57C2A54F96D002136D9 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F2EFC5842A555784002136D9 /* YouBikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeListView.swift; sourceTree = "<group>"; };
 		F2EFC5862A5558C4002136D9 /* YouBikeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeListCell.swift; sourceTree = "<group>"; };
@@ -136,7 +140,9 @@
 			children = (
 				F20236172A53B62D007952F2 /* APIHandler.swift */,
 				F20236192A53B7BB007952F2 /* APIName.swift */,
-				F2EFC57A2A540DBC002136D9 /* APIResponse.swift */,
+				F28E6D362ACFF3E300A57E6E /* APIRequest.swift */,
+				F28E6D382AD0020100A57E6E /* YouBikeMapRequest.swift */,
+				F28E6D3A2AD0043900A57E6E /* YouBikeMapResponse.swift */,
 				F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */,
 				F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */,
 			);
@@ -272,16 +278,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EFC5872A5558C4002136D9 /* YouBikeListCell.swift in Sources */,
+				F28E6D392AD0020100A57E6E /* YouBikeMapRequest.swift in Sources */,
 				F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */,
 				F2EFC57D2A54F96D002136D9 /* Action.swift in Sources */,
 				F2EFC56D2A53E543002136D9 /* Store.swift in Sources */,
 				F2EFC5852A555784002136D9 /* YouBikeListView.swift in Sources */,
 				F20236182A53B62D007952F2 /* APIHandler.swift in Sources */,
+				F28E6D372ACFF3E300A57E6E /* APIRequest.swift in Sources */,
 				F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */,
 				F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */,
 				F202360A2A53B5F0007952F2 /* ContentView.swift in Sources */,
-				F2EFC57B2A540DBC002136D9 /* APIResponse.swift in Sources */,
 				F20236082A53B5F0007952F2 /* YouBikeMapApp.swift in Sources */,
+				F28E6D3B2AD0043900A57E6E /* YouBikeMapResponse.swift in Sources */,
 				F2EFC5692A53E490002136D9 /* Middleware.swift in Sources */,
 				F2EFC5762A53FA00002136D9 /* YouBikeMapItem.swift in Sources */,
 				F2EFC5722A53E9AC002136D9 /* YouBikeAction.swift in Sources */,

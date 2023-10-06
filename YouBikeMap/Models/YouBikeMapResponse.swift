@@ -1,15 +1,18 @@
 //
-//  APIResponse.swift
+//  YouBikeMapResponse.swift
 //  YouBikeMap
 //
-//  Created by Eden on 2023/7/4.
+//  Created by Eden on 2023/10/6.
 //
 
 import Foundation
 import JsonProtection
 
 public
-struct APIResponse
+typealias YouBikeMapItems = Array<YouBikeMapItem>
+
+public
+struct YouBikeMapResponse
 {
     // MARK: - Properties -
     
@@ -21,7 +24,7 @@ struct APIResponse
     var isSuccessed: Bool?
 }
 
-extension APIResponse: JsonDecodable
+extension YouBikeMapResponse: JsonDecodable
 {
     private
     enum CodingKeys: String, CodingKey
@@ -32,11 +35,10 @@ extension APIResponse: JsonDecodable
     }
 }
 
-
 // MARK: - APIResponse.Data -
 
 public
-extension APIResponse
+extension YouBikeMapResponse
 {
     // MARK: - Properties -
     
@@ -47,11 +49,11 @@ extension APIResponse
         var returnCode: Int?
         
         public private(set)
-        var returnValue: Array<YouBikeMapItem>?
+        var returnValue: YouBikeMapItems?
     }
 }
 
-extension APIResponse.Data: Decodable
+extension YouBikeMapResponse.Data: Decodable
 {
     private
     enum CodingKeys: String, CodingKey

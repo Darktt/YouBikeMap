@@ -24,3 +24,8 @@ extension JsonDecodable
         return object
     }
 }
+
+extension Array: JsonDecodable where Element: Decodable
+{
+    
+}
