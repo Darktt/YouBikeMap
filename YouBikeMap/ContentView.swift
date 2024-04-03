@@ -78,5 +78,6 @@ struct ContentView_Previews: PreviewProvider
     {
         ContentView()
             .environmentObject(kYouBikeStore)
+            .previewDevice(.iPad)
     }
 }

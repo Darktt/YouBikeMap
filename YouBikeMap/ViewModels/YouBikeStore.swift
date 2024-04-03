@@ -5,71 +5,28 @@
 //  Created by Eden on 2023/7/4.
 //
 
-import Foundation
-
-public
-typealias YouBikeStore = Store<YouBikeState, YouBikeAction, YouBikeContext>
-
-@MainActor
-let kYouBikeStore = YouBikeStore(state: YouBikeState(), context: YouBikeContext(), reducer: _reducer)
-
-// MARK: - YouBikeState -
-
-public
-struct YouBikeState
-{
-    public fileprivate(set)
-    var mapItems: Array<YouBikeMapItem> = []
+private
+func kReducer(state: YouBikeState, action: YouBikeAction) -> YouBikeState {
     
-    fileprivate
-    var privateMapItems: Array<YouBikeMapItem> = []
+    print("進入　　　 Reducer        : 動作：\(action) 狀態：\(state)")
     
-    fileprivate
-    init() { }
-}
-
-// MARK: - YouBikeContext -
-
-public
-struct YouBikeContext
-{
-    func fetchData() async throws -> Array<YouBikeMapItem>
-    {
-        let apiHandler = APIHandler.shared
-        let response: YouBikeMapResponse = try await apiHandler.sendRequest(YouBikeMapRequest())
-        let mapItems: Array<YouBikeMapItem> = response.data?.returnValue ?? []
+    var newState = state
+    newState.error = nil
+    
+    switch action {
         
-        return mapItems
-    }
-}
-
-// MARK: - Reducer -
-
-fileprivate let _reducer: YouBikeStore.Reducer = {
-    
-    (state, action, context) in
-    
-    var state: YouBikeState = state
-    
-    switch action
-    {
-        case .fetchData:
-            let mapItems = try await context.fetchData()
-            state.mapItems = mapItems
-            state.privateMapItems = mapItems
+        case .fetchDataResponse(let mapItems):
+            newState.mapItems = mapItems
         
-        case let .search(keyword):
-            guard !keyword.isEmpty else {
-                
-                state.mapItems = state.privateMapItems
-                break
-            }
-            let searchResultItems = state.privateMapItems.filter({ $0.name.contains(keyword) })
-            state.mapItems = searchResultItems
+        case .error(let error):
+            newState.error = error
         
         default:
             break
     }
     
-    return state
+    print("離開　　　 Reducer        : 動作：\(action), 狀態：\(newState)")
+    return newState
 }
+
+let youBikeStore = Store(initialState: YouBikeState(), reducer: kReducer, middlewares: [ApiMiddware, ErrorMiddware])
