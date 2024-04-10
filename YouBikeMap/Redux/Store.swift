@@ -24,16 +24,18 @@ typealias ActionCreator<State, Action> = (@escaping Processor<Action>, @autoclos
 
 // 定義 Reducer 類型別名，用於處理狀態變化的邏輯
 public
-typealias Reducer<State, Action> = (State, Action) throws -> State
+typealias Reducer<State, Action> = (State, Action) -> State
 
 // 定義 Subscriber 類型別名，用於訂閱狀態變化
 public
 typealias Subscriber<State> = (State) -> Void
 
 // 定義 Store 類，實現簡單的 Redux 風格狀態管理
+@MainActor
 public
-class Store<State, Action>
+class Store<State, Action>: ObservableObject
 {
+    @Published
     public private(set)
     var state: State
     
@@ -56,22 +58,18 @@ class Store<State, Action>
     
     func dispatch(_ action: Action)
     {
-        print("收到新動作 \(action)")
-        DispatchQueue.main.async {
+        var composedMiddleware: Processor<Action> = self.dispatchWithoutMiddleware
+        
+        self.middlewares.reversed().forEach {
             
-            var composedMiddleware: Processor<Action> = self.dispatchWithoutMiddleware
+            middleware in
             
-            self.middlewares.reversed().forEach {
-                
-                middleware in
-                
-                let currentMiddleware = composedMiddleware
-                composedMiddleware = middleware(self)(currentMiddleware)
-            }
-            
-            composedMiddleware(action)
-            self.notifySubscribers()
+            let currentMiddleware = composedMiddleware
+            composedMiddleware = middleware(self)(currentMiddleware)
         }
+        
+        composedMiddleware(action)
+        self.notifySubscribers()
     }
     
     // 訂閱狀態變化
@@ -88,15 +86,9 @@ extension Store
 {
     func dispatchWithoutMiddleware(action: Action)
     {
-        do {
-            
-            self.state = try self.reducer(state, action)
-            // 不要忘記在這裡通知訂閱者
-            self.notifySubscribers()
-        } catch {
-            
-            
-        }
+        self.state = self.reducer(state, action)
+        // 不要忘記在這裡通知訂閱者
+        self.notifySubscribers()
     }
     
     // 通知所有訂閱者，狀態發生變化

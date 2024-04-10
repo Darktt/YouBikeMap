@@ -19,4 +19,6 @@ enum YouBikeAction
     case error(YouBikeError)
     
     case search(String)
+    
+    case searchResult(Array<YouBikeMapItem>)
 }

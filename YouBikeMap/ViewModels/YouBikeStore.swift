@@ -5,10 +5,9 @@
 //  Created by Eden on 2023/7/4.
 //
 
+@MainActor
 private
 func kReducer(state: YouBikeState, action: YouBikeAction) -> YouBikeState {
-    
-    print("進入　　　 Reducer        : 動作：\(action) 狀態：\(state)")
     
     var newState = state
     newState.error = nil
@@ -17,16 +16,23 @@ func kReducer(state: YouBikeState, action: YouBikeAction) -> YouBikeState {
         
         case .fetchDataResponse(let mapItems):
             newState.mapItems = mapItems
+            newState.privateMapItems = mapItems
         
         case .error(let error):
             newState.error = error
+        
+        case .searchResult(let mapItems):
+            newState.mapItems = mapItems
         
         default:
             break
     }
     
-    print("離開　　　 Reducer        : 動作：\(action), 狀態：\(newState)")
     return newState
 }
 
-let youBikeStore = Store(initialState: YouBikeState(), reducer: kReducer, middlewares: [ApiMiddware, ErrorMiddware])
+public
+typealias YouBikeStore = Store<YouBikeState, YouBikeAction>
+
+@MainActor
+let kYouBikeStore: YouBikeStore = Store(initialState: YouBikeState(), reducer: kReducer, middlewares: [ApiMiddware, ErrorMiddware, SearchMiddware])

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 public
 let ErrorMiddware: Middleware<YouBikeState, YouBikeAction> = {
     

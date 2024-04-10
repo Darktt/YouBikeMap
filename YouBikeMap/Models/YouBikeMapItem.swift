@@ -40,18 +40,22 @@ struct YouBikeMapItem
     var city: String?
     
     /// 站點名稱
-    @TrimString(trimSetting: .prefix("YouBike2.0_"))
-    public private(set)
-    var name: String
+    public
+    var name: String {
+        
+        guard let name = self.privateName else {
+            
+            return ""
+        }
+        
+        var trimString = TrimString(trimSetting: .prefix("YouBike2.0_"))
+        trimString.wrappedValue = name
+        
+        return trimString.wrappedValue
+    }
     
     private
-    var privateName: String? {
-        
-        willSet {
-            
-            self.name = newValue ?? ""
-        }
-    }
+    var privateName: String?
     
     /// 站點所在區域
     public private(set)

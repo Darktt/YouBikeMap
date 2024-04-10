@@ -16,6 +16,6 @@ struct YouBikeState
     public
     var error: YouBikeError?
     
-    fileprivate
+    public
     var privateMapItems: Array<YouBikeMapItem> = []
 }

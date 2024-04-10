@@ -16,6 +16,7 @@
 		F202361D2A53BBED007952F2 /* JsonDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202361C2A53BBED007952F2 /* JsonDecodable.swift */; };
 		F20236222A53C96C007952F2 /* SwiftExtensions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; };
 		F20236232A53C96C007952F2 /* SwiftExtensions.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F22F53872BC689FB00D76A0E /* SearchMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22F53862BC689FB00D76A0E /* SearchMiddware.swift */; };
 		F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245060E2A67B35800B5E4D4 /* MapView.swift */; };
 		F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */; };
 		F25C465D2B91743C007ADE3B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25C465C2B91743C007ADE3B /* Store.swift */; };
@@ -28,7 +29,6 @@
 		F2BB2F5C2BBD566300763F62 /* YouBikeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB2F5B2BBD566300763F62 /* YouBikeError.swift */; };
 		F2C2A5042B7EFFF3005D4841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2A5032B7EFFF3005D4841 /* AppDelegate.swift */; };
 		F2EBAE082A68DFCF0035CCFE /* TrimString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBAE072A68DFCF0035CCFE /* TrimString.swift */; };
-		F2EFC56D2A53E543002136D9 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56C2A53E543002136D9 /* AppStore.swift */; };
 		F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */; };
 		F2EFC5722A53E9AC002136D9 /* YouBikeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */; };
 		F2EFC5762A53FA00002136D9 /* YouBikeMapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */; };
@@ -63,6 +63,7 @@
 		F20236192A53B7BB007952F2 /* APIName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIName.swift; sourceTree = "<group>"; };
 		F202361C2A53BBED007952F2 /* JsonDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodable.swift; sourceTree = "<group>"; };
 		F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftExtensions.xcframework; path = Framework/SwiftExtensions.xcframework; sourceTree = "<group>"; };
+		F22F53862BC689FB00D76A0E /* SearchMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMiddware.swift; sourceTree = "<group>"; };
 		F245060E2A67B35800B5E4D4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItemExtension.swift; sourceTree = "<group>"; };
 		F25C465A2B9170FE007ADE3B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -76,7 +77,6 @@
 		F2BB2F5B2BBD566300763F62 /* YouBikeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeError.swift; sourceTree = "<group>"; };
 		F2C2A5032B7EFFF3005D4841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EBAE072A68DFCF0035CCFE /* TrimString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimString.swift; sourceTree = "<group>"; };
-		F2EFC56C2A53E543002136D9 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStore.swift; sourceTree = "<group>"; };
 		F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeAction.swift; sourceTree = "<group>"; };
 		F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItem.swift; sourceTree = "<group>"; };
@@ -185,6 +185,7 @@
 				F2BB2F5B2BBD566300763F62 /* YouBikeError.swift */,
 				F25C465E2B91745A007ADE3B /* ApiMiddware.swift */,
 				F2BB2F572BBD4F0500763F62 /* ErrorMiddware.swift */,
+				F22F53862BC689FB00D76A0E /* SearchMiddware.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -200,7 +201,6 @@
 		F2EFC56E2A53E7C9002136D9 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
-				F2EFC56C2A53E543002136D9 /* AppStore.swift */,
 				F25C465C2B91743C007ADE3B /* Store.swift */,
 			);
 			path = Redux;
@@ -296,12 +296,12 @@
 				F2BB2F5A2BBD51BD00763F62 /* YouBikeState.swift in Sources */,
 				F2C2A5042B7EFFF3005D4841 /* AppDelegate.swift in Sources */,
 				F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */,
-				F2EFC56D2A53E543002136D9 /* AppStore.swift in Sources */,
 				F2EFC5852A555784002136D9 /* YouBikeListView.swift in Sources */,
 				F20236182A53B62D007952F2 /* APIHandler.swift in Sources */,
 				F28E6D372ACFF3E300A57E6E /* APIRequest.swift in Sources */,
 				F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */,
 				F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */,
+				F22F53872BC689FB00D76A0E /* SearchMiddware.swift in Sources */,
 				F202360A2A53B5F0007952F2 /* ContentView.swift in Sources */,
 				F20236082A53B5F0007952F2 /* YouBikeMapApp.swift in Sources */,
 				F28E6D3B2AD0043900A57E6E /* YouBikeMapResponse.swift in Sources */,
@@ -442,7 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YouBikeMap/Preview Content\"";
-				DEVELOPMENT_TEAM = G3SN9N6K54;
+				DEVELOPMENT_TEAM = Y5PE34DHT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -484,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YouBikeMap/Preview Content\"";
-				DEVELOPMENT_TEAM = G3SN9N6K54;
+				DEVELOPMENT_TEAM = Y5PE34DHT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

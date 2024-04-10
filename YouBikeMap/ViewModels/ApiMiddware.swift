@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 public
 let ApiMiddware: Middleware<YouBikeState, YouBikeAction> = {
     
@@ -19,8 +20,6 @@ let ApiMiddware: Middleware<YouBikeState, YouBikeAction> = {
             action in
             
             if case YouBikeAction.fetchData = action {
-                
-                print("執行異步操作")
                 
                 Task {
                     

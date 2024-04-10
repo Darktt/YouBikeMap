@@ -18,10 +18,6 @@ struct ContentView: View
     private
     var searchKeyword: String = ""
     
-    @State
-    private
-    var error: Error?
-    
     public
     var body: some View {
         
@@ -31,7 +27,7 @@ struct ContentView: View
             .navigationBarTitle(Text("YouBike"), displayMode: .automatic)
             .refreshable { self.fetch() }
         }
-        .alert(Text("\(self.error?.localizedDescription ?? "")"), isPresented: .constant(self.error != nil), actions: {
+        .alert(Text("\(self.store.state.error?.message ?? "")"), isPresented: .constant(self.store.state.error != nil), actions: {
             Button("OK") {
                 
                 self.fetch()
@@ -47,28 +43,12 @@ struct ContentView: View
     
     func fetch()
     {
-        self.error = nil
-        
-        do {
-            
-            try self.store.send(.fetchData)
-        } catch {
-            
-            self.error = error
-        }
+        self.store.dispatch(.fetchData)
     }
     
     func search(with keyword: String)
     {
-        self.error = nil
-        
-        do {
-            
-            try self.store.send(.search(keyword))
-        } catch {
-            
-            self.error = error
-        }
+        self.store.dispatch(.search(keyword))
     }
 }
 
