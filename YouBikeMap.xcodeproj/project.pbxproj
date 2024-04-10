@@ -66,7 +66,6 @@
 		F22F53862BC689FB00D76A0E /* SearchMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMiddware.swift; sourceTree = "<group>"; };
 		F245060E2A67B35800B5E4D4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeMapItemExtension.swift; sourceTree = "<group>"; };
-		F25C465A2B9170FE007ADE3B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F25C465C2B91743C007ADE3B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F25C465E2B91745A007ADE3B /* ApiMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMiddware.swift; sourceTree = "<group>"; };
 		F28E6D362ACFF3E300A57E6E /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 				F20236062A53B5F0007952F2 /* YouBikeMap */,
 				F20236052A53B5F0007952F2 /* Products */,
 				F20236202A53C96C007952F2 /* Frameworks */,
-				F25C465A2B9170FE007ADE3B /* MyPlayground.playground */,
 			);
 			sourceTree = "<group>";
 		};
