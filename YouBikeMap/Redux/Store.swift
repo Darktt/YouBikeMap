@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import QueueMacro
 
 public
 typealias Processor<Action> = (Action) -> Void
@@ -69,15 +70,6 @@ class Store<State, Action>: ObservableObject
         }
         
         composedMiddleware(action)
-        self.notifySubscribers()
-    }
-    
-    // 訂閱狀態變化
-    func subscribe(_ subscriber: @escaping Subscriber<State>)
-    {
-        // 添加訂閱者並立即通知一次，提供當前狀態
-        self.subscribers.append(subscriber)
-        subscriber(self.state)
     }
 }
 
@@ -86,17 +78,9 @@ extension Store
 {
     func dispatchWithoutMiddleware(action: Action)
     {
-        self.state = self.reducer(state, action)
-        // 不要忘記在這裡通知訂閱者
-        self.notifySubscribers()
-    }
-    
-    // 通知所有訂閱者，狀態發生變化
-    func notifySubscribers()
-    {
-        for subscriber in self.subscribers {
+        #MainQueue({
             
-            subscriber(self.state)
-        }
+            self.state = self.reducer(self.state, action)
+        })
     }
 }

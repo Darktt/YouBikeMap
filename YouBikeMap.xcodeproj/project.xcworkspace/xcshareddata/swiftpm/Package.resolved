@@ -1,5 +1,5 @@
 {
-  "originHash" : "7bc98f8fc0c282f9eae57bde05ff408b4996caea25a50c7658ee335885fc60cc",
+  "originHash" : "6f05f8474b392aa5916f1a039c4f243cc1220c8847279a7bb3db780c6908a5de",
   "pins" : [
     {
       "identity" : "jsonprotection",
@@ -8,6 +8,24 @@
       "state" : {
         "revision" : "3d93d778287476536a84dca689681bfe283d4a7b",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "ququemacro",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Darktt/QuqueMacro.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "dea915518240b811ac64e3188bb65070a2099c47"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "031b2e3ad22c74677ad1ff6a867fa2e9ffb2e510"
       }
     }
   ],
