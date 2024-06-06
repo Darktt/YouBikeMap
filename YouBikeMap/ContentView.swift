@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+extension View
+{
+    func networkErrorAlert(text: String, isPresented: Binding<Bool>, action: @escaping () -> Void) -> some View
+    {
+        self.alert(Text(text), isPresented: isPresented) {
+            
+            Button("OK", action: action)
+        }
+    }
+}
+
 public
 struct ContentView: View
 {
@@ -27,12 +38,10 @@ struct ContentView: View
             .navigationBarTitle(Text("YouBike"), displayMode: .automatic)
             .refreshable { self.fetch() }
         }
-        .alert(Text("\(self.store.state.error?.message ?? "")"), isPresented: .constant(self.store.state.error != nil), actions: {
-            Button("OK") {
-                
-                self.fetch()
-            }
-        })
+        .networkErrorAlert(text: "\(self.store.state.error?.message ?? "")", isPresented: .constant(self.store.state.error != nil)) {
+            
+            self.fetch()
+        }
         .onAppear(perform: self.fetch)
         .searchable(text: self.$searchKeyword)
         .onChange(of: self.searchKeyword) { newValue in
