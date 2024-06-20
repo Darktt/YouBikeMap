@@ -78,9 +78,9 @@ extension Store
 {
     func dispatchWithoutMiddleware(action: Action)
     {
-        #MainQueue({
+        #MainQueue {
             
             self.state = self.reducer(self.state, action)
-        })
+        }
     }
 }

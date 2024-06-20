@@ -17,11 +17,12 @@
 		F20236222A53C96C007952F2 /* SwiftExtensions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; };
 		F20236232A53C96C007952F2 /* SwiftExtensions.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F20236212A53C96C007952F2 /* SwiftExtensions.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F22F53872BC689FB00D76A0E /* SearchMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22F53862BC689FB00D76A0E /* SearchMiddware.swift */; };
-		F22F538D2BC788EE00D76A0E /* QueueMacro in Frameworks */ = {isa = PBXBuildFile; productRef = F22F538C2BC788EE00D76A0E /* QueueMacro */; };
 		F245060F2A67B35800B5E4D4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245060E2A67B35800B5E4D4 /* MapView.swift */; };
 		F24506112A67D19200B5E4D4 /* YouBikeMapItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24506102A67D19200B5E4D4 /* YouBikeMapItemExtension.swift */; };
 		F25C465D2B91743C007ADE3B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25C465C2B91743C007ADE3B /* Store.swift */; };
 		F25C465F2B91745A007ADE3B /* ApiMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25C465E2B91745A007ADE3B /* ApiMiddware.swift */; };
+		F2777CDA2C242D8B003E14BD /* QueueMacro in Frameworks */ = {isa = PBXBuildFile; productRef = F2777CD92C242D8B003E14BD /* QueueMacro */; };
+		F2777CDD2C242DA7003E14BD /* JsonProtection in Frameworks */ = {isa = PBXBuildFile; productRef = F2777CDC2C242DA7003E14BD /* JsonProtection */; };
 		F28E6D372ACFF3E300A57E6E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E6D362ACFF3E300A57E6E /* APIRequest.swift */; };
 		F28E6D392AD0020100A57E6E /* YouBikeMapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E6D382AD0020100A57E6E /* YouBikeMapRequest.swift */; };
 		F28E6D3B2AD0043900A57E6E /* YouBikeMapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E6D3A2AD0043900A57E6E /* YouBikeMapResponse.swift */; };
@@ -33,7 +34,6 @@
 		F2EFC5702A53E7FF002136D9 /* YouBikeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC56F2A53E7FF002136D9 /* YouBikeStore.swift */; };
 		F2EFC5722A53E9AC002136D9 /* YouBikeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5712A53E9AC002136D9 /* YouBikeAction.swift */; };
 		F2EFC5762A53FA00002136D9 /* YouBikeMapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5752A53FA00002136D9 /* YouBikeMapItem.swift */; };
-		F2EFC5792A53FA77002136D9 /* JsonProtection in Frameworks */ = {isa = PBXBuildFile; productRef = F2EFC5782A53FA77002136D9 /* JsonProtection */; };
 		F2EFC5852A555784002136D9 /* YouBikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5842A555784002136D9 /* YouBikeListView.swift */; };
 		F2EFC5872A5558C4002136D9 /* YouBikeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5862A5558C4002136D9 /* YouBikeListCell.swift */; };
 		F2EFC5892A5567DC002136D9 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFC5882A5567DC002136D9 /* Line.swift */; };
@@ -91,8 +91,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20236222A53C96C007952F2 /* SwiftExtensions.xcframework in Frameworks */,
-				F22F538D2BC788EE00D76A0E /* QueueMacro in Frameworks */,
-				F2EFC5792A53FA77002136D9 /* JsonProtection in Frameworks */,
+				F2777CDD2C242DA7003E14BD /* JsonProtection in Frameworks */,
+				F2777CDA2C242D8B003E14BD /* QueueMacro in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,8 +232,8 @@
 			);
 			name = YouBikeMap;
 			packageProductDependencies = (
-				F2EFC5782A53FA77002136D9 /* JsonProtection */,
-				F22F538C2BC788EE00D76A0E /* QueueMacro */,
+				F2777CD92C242D8B003E14BD /* QueueMacro */,
+				F2777CDC2C242DA7003E14BD /* JsonProtection */,
 			);
 			productName = YouBikeMap;
 			productReference = F20236042A53B5F0007952F2 /* YouBikeMap.app */;
@@ -264,8 +264,8 @@
 			);
 			mainGroup = F20235FB2A53B5F0007952F2;
 			packageReferences = (
-				F2EFC5772A53FA77002136D9 /* XCRemoteSwiftPackageReference "JsonProtection" */,
-				F22F538B2BC788EE00D76A0E /* XCRemoteSwiftPackageReference "QuqueMacro" */,
+				F2777CD82C242D8B003E14BD /* XCRemoteSwiftPackageReference "QueueMacro" */,
+				F2777CDB2C242DA7003E14BD /* XCRemoteSwiftPackageReference "JsonProtection" */,
 			);
 			productRefGroup = F20236052A53B5F0007952F2 /* Products */;
 			projectDirPath = "";
@@ -542,33 +542,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F22F538B2BC788EE00D76A0E /* XCRemoteSwiftPackageReference "QuqueMacro" */ = {
+		F2777CD82C242D8B003E14BD /* XCRemoteSwiftPackageReference "QueueMacro" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Darktt/QuqueMacro.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		F2EFC5772A53FA77002136D9 /* XCRemoteSwiftPackageReference "JsonProtection" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Darktt/JsonProtection";
+			repositoryURL = "https://github.com/Darktt/QueueMacro.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.0.2;
+			};
+		};
+		F2777CDB2C242DA7003E14BD /* XCRemoteSwiftPackageReference "JsonProtection" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Darktt/JsonProtection.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F22F538C2BC788EE00D76A0E /* QueueMacro */ = {
+		F2777CD92C242D8B003E14BD /* QueueMacro */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F22F538B2BC788EE00D76A0E /* XCRemoteSwiftPackageReference "QuqueMacro" */;
+			package = F2777CD82C242D8B003E14BD /* XCRemoteSwiftPackageReference "QueueMacro" */;
 			productName = QueueMacro;
 		};
-		F2EFC5782A53FA77002136D9 /* JsonProtection */ = {
+		F2777CDC2C242DA7003E14BD /* JsonProtection */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F2EFC5772A53FA77002136D9 /* XCRemoteSwiftPackageReference "JsonProtection" */;
+			package = F2777CDB2C242DA7003E14BD /* XCRemoteSwiftPackageReference "JsonProtection" */;
 			productName = JsonProtection;
 		};
 /* End XCSwiftPackageProductDependency section */
